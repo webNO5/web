@@ -1,0 +1,24 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{title}} - SocialForum</title>
+    {% else %}
+    <title>SocialForum</title>
+    {% endif %}
+  </head>
+  <body>
+    <div>
+	SocialForum: <a href="/index">Home</a>
+	{% if current_user.is_authenticated() %}
+	<a href="{{ url_for('signout') }}">signout</a>
+	{% else %}
+	<a href="{{ url_for('login') }}">signin</a>
+	{% endif %}
+    </div>
+    <hr>
+    {% for message in get_flashed_messages() %}
+    <div class=flash>{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+  </body>
+</html>
