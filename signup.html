@@ -1,0 +1,19 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Signup</h1>
+<form method="post" action="">
+    {{ form.hidden_tag() }}
+    <p>{{ form.username.label }} {{ form.username(size=20) }}</p>
+    <p>{{ form.email.label }} {{ form.email(size=20) }}</p>
+    <p>{{ form.password.label }} {{ form.password(size=20) }}</p>
+    <p>{{ form.conform.label }} {{ form.conform(size=20) }}</p>
+    <input type="submit" value="Sign Up">
+    <input type="reset" value="Reset">
+    {% for error in form.errors %}
+     <span style="color: red;">[{{error}}]</span>
+     {% endfor %}<br>
+</form>
+
+{% endblock %}
