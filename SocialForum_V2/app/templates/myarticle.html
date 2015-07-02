@@ -1,0 +1,11 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>我的帖子</h1>
+{% for a in article %}
+<p><a href="{{a.url}}">{{a.art.title}}</a>    时间：{{a.art.timestamp}}<p>
+{% endfor %}
+
+{% endblock %}

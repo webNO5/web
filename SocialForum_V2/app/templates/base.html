@@ -1,0 +1,27 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    {% if title %}
+    <title>{{title}} - SocialForum</title>
+    {% else %}
+    <title>SocialForum</title>
+    {% endif %}
+  </head>
+  <body>
+    <div>
+	SocialForum: <a href="/index">首页</a>
+	{% if current_user.is_authenticated() %}
+		<a href="{{ url_for('myarticle') }}">我的帖子</a>
+		<a href="{{ url_for('newarticle') }}">发帖</a>
+		<a href="{{ url_for('signout') }}">退出</a>
+	{% else %}
+		<a href="{{ url_for('login') }}">登录</a>
+	{% endif %}
+    </div>
+    <hr>
+    {% for message in get_flashed_messages() %}
+    <div class=flash>{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome to SocialForum!</h1>
+<h2><a href={{url_for('allarticles')}}  target="_blank">用户帖子</a></h2>
+{% for a in article %}
+	<p><a href={{a.url}}  target="_blank">{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}</p>
+{% endfor %}
+<h2><a href={{url_for('news')}} target="_blank">新闻</a></h2>
+{% for n in news %}
+	<p><a href={{n.url}}  target="_blank">{{n.title}}</a></p>
+{% endfor %}
+{% endblock %}
+

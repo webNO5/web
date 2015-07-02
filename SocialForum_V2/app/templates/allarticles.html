@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>用户帖子</h1>
+{% for a in article %}
+	<p><a href={{a.url}}  target="_blank">{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}</p>
+{% endfor %}
+{% endblock %}
+
+

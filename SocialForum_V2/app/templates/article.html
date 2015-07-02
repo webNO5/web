@@ -1,0 +1,23 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{article.title}}</h1>
+<p>时间{{article.timestamp}}</p>
+<p>正文</p>
+<p>{{ article.body}}</p>
+<h1>评论</h1>
+{% for c in comment %}
+<p>时间{{c.timestamp}} {{c.username}}说：{{c.body}}</p>
+{% endfor %}
+<form method="post" action="">
+    {{ form.hidden_tag() }}
+    <p>{{ form.body(size=80*80) }}</p>
+    <input type="submit" value="确认">
+    <input type="reset" value="重置">
+    {% for error in form.errors %}
+     <span style="color: red;">[{{error}}]</span>
+    {% endfor %}<br>
+</form>
+{% endblock %}
+
