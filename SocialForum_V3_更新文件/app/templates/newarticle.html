@@ -1,0 +1,18 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>发帖</h1>
+<form method="post" action="">
+    {{ form.hidden_tag() }}
+	<p>标题{{ form.title(size=80) }}</p>
+	<p>正文</p>
+    <p>{{ form.body(size=800*400) }}</p>
+	<p><input type="submit" value="确认">
+	<input type="reset" value="重置"></p>
+    {% for error in form.errors %}
+     <span style="color: red;">[{{error}}]</span>
+     {% endfor %}<br>
+</form>
+
+{% endblock %}
