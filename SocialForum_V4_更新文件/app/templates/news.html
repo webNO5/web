@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>新闻</h1>
+{% for n in news %}
+	<p><a href={{n.url}}  target="_blank">{{n.title}}</a></p>
+{% endfor %}
+{% endblock %}
+
+

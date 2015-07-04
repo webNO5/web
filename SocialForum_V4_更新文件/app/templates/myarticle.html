@@ -1,0 +1,19 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>我的帖子</h1>
+{% for a in article %}
+<p><a href="{{a.url}}">{{a.art.title}}</a>    时间：{{a.art.timestamp}}   模块：
+{% if a.art.type_a==1 %}生活
+{% elif a.art.type_a==2 %}教育
+{% elif a.art.type_a==3 %}IT
+{% elif a.art.type_a==4 %}文学
+{% elif a.art.type_a==5 %}校园
+{% elif a.art.type_a==6 %}学习
+{% endif %}
+</p>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>用户帖子</h1>
+{% if type_a==1 %}
+	<a href="/newarticle/1">发帖</a>
+{% elif type_a==2 %}
+	<a href="/newarticle/2">发帖</a>
+{% elif type_a==3 %}
+	<a href="/newarticle/3">发帖</a>
+{% elif type_a==4 %}
+	<a href="/newarticle/4">发帖</a>
+{% elif type_a==5 %}
+	<a href="/newarticle/5">发帖</a>
+{% elif type_a==6 %}
+	<a href='/newarticle/6'>发帖</a>
+{% endif %}
+{% for a in article %}
+	<p><a href={{a.url}}  target="_blank">{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}</p>
+{% endfor %}
+{% endblock %}
+
+
