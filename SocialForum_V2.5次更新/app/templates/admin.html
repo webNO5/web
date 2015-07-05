@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {% if title %}
+    <title>{{title}} - SocialForum</title>
+    {% else %}
+    <title>SocialForum</title>
+    {% endif %}
+    <link rel="stylesheet" type="text/css" href="./static/base.css" />
+  </head>
+  <body>
+    
+    <div>
+	{% if current_user.is_authenticated() %}
+		<a href="{{ url_for('signout') }}">退出</a>
+	{% else %}
+		<a href="{{ url_for('login') }}">登录</a>
+	{% endif %}
+    </div>
+    <hr>
+    {% for message in get_flashed_messages() %}
+    <div class=flash>{{ message }}</div>
+    {% endfor %}
+    <h1>Hello admin!</h1>
+	<h3><a href="/allarticles/1" target="_blank">>生活</a></h3>
+	{% for a in article.article1 %}
+		<p><a href={{a.url}}  target="_blank">{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}<a href={{a.delurl}}>删除帖子</a></p>
+	{% endfor %}
+		<h3><a href="/allarticles/2" target="_blank">>教育</a></h3>
+	{% for a in article.article2 %}
+		<p><a href={{a.url}}  target="_blank">{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}<a href={{a.delurl}}>删除帖子</a></p>
+	{% endfor %}
+		<h3><a href="/allarticles/3" target="_blank">>IT</a></h3>
+	{% for a in article.article3 %}
+		<p><a href={{a.url}}  target="_blank">{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}<a href={{a.delurl}}>删除帖子</a></p>
+	{% endfor %}
+		<h3><a href="/allarticles/4" target="_blank">>文学</a></h3>
+	{% for a in article.article4 %}
+		<p><a href={{a.url}}  target="_blank">{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}<a href={{a.delurl}}>删除帖子</a></p>
+	{% endfor %}
+		<h3><a href="/allarticles/5" target="_blank">>校园</a></h3>
+	{% for a in article.article5 %}
+		<p><a href={{a.url}}  target="_blank">{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}<a href={{a.delurl}}>删除帖子</a></p>
+	{% endfor %}
+		<h3><a href="/allarticles/6" target="_blank">>学习</a></h3>
+	{% for a in article.article6 %}
+		<p><a href={{a.url}}  target="_blank">{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}<a href={{a.delurl}}>删除帖子</a></p>
+	{% endfor %}
+  </body>
+</html>
+
+<!--管理员功能有问题 -->

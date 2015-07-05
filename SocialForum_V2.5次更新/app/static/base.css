@@ -1,0 +1,205 @@
+@charset "utf-8";
+
+
+body,td,th {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 18px;
+}
+
+/*  所有的a标签颜色都是黑色*/
+a{
+	color:#000;
+	}
+
+
+	
+/*   base页面的背景，大小，长度*/	
+.container{
+	width:1306px;
+	height:1506px;
+	overflow:inherit;
+	background-image:url(color.jpg);
+	background-repeat:no-repeat;
+	margin-left:auto;
+	margin-right:auto;
+	}
+	
+/*base页面右上角的登陆框*/	
+.baselogbox{
+	width:300px;
+	height:20px;
+	padding-top:10px;
+	padding-left:1000px;}	
+	
+	
+/* base页右上角的登陆框中的a标签单独处理 */	
+.baselogbox a{
+	text-align:center;
+	color:#FFF;
+	text-decoration:none;
+	}
+	
+	
+/*base页面的导航栏*/
+.nav{
+	width:1306px;
+	height:280px;
+	margin-top:200px;
+		}
+
+/*导航条的五条项目  全部float 每一个都要单独调节位置 */
+.navlife{
+	width:100px;
+	height:30px;
+	margin-top:165px;
+	margin-left:55px;
+	font-size:24px;
+	float:left;
+	}
+	
+	
+	
+.navnews{
+	width:100px;
+	height:30px;
+	margin-top:195px;
+	margin-left:225px;
+	font-size:24px;
+	float:left;
+	}
+	
+	
+.navcampus{
+	width:100px;
+	height:30px;
+	margin-top:205px;
+	margin-left:175px;
+	font-size:24px;
+	float:left;
+	}
+	
+.navworking{
+	width:100px;
+	height:30px;
+	margin-top:185px;
+	margin-right:175px;
+	font-size:24px;
+	float:right;}
+	
+.navIT{
+	width:100px;
+	height:30px;
+	margin-top:170px;
+	margin-right:px;
+	font-size:24px;
+	float:right;
+	}	
+
+/*黑色字体Welcom SocialForum部分*/
+.welcom{
+	width:1306px;
+	height:260px;
+	margin-top:20px;
+	text-align:center;
+	}
+
+/*三个位置的a标签单独处理*/
+.welcom a,.nav a,.logbox a{
+	text-decoration:none;}
+
+
+/*index页面的body体  在这之前又加了一个*/
+.bodybox{
+	width:1336px;
+	height:700px;
+	margin-top:10px;	
+	}
+
+/*index界面的帖子栏目*/
+.textbox{
+	width:600px;
+	height:700px;
+	padding-left:30px;
+	float:left;
+	margin-left:40px;
+
+	}
+/*把其中一个放在了右边因为觉得页面太长不均匀*/	
+.special{
+	width:540px;
+	height:140px;
+	overflow:hidden;
+	float:right;
+	margin-top:0px;
+	margin-right:35px;
+
+	}
+/*新闻栏目*/	
+.newsbox{	
+	float:right;
+	width:540px;
+	height:440px;
+	overflow:hidden;
+	margin-top:50px;
+	margin-right:30px;
+
+	}
+
+/*每一类单独的帖子*/	
+.module{
+	width:600px;
+	height:110px;
+	overflow:hidden;
+	margin-top:23px;
+	margin-left:10px;
+	}
+
+/*设置登陆注册的文本框位置的栏目*/	
+.userpass{
+	width:400px;
+	height:40px;
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;}
+
+/*新闻栏目的页面安排 后来用于所有其它页面*/
+.news{
+	width:1256px;
+	height:640px;
+	background-color:#7e7224;
+	margin-top:20px;
+	padding-top:40px;
+	padding-left:50px;
+	overflow:scroll;}
+
+/*包括新闻在内的所有帖子的排版*/	
+.postitle{
+	font-weight:normal;
+	font-size:24px;}
+
+
+/*注册页面的body体*/	
+.signup{
+	width:400px;
+	height:400px;
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;} 
+	
+
+/*登陆重置的按钮*/	
+.button{
+	width:80px;
+	height:30px;
+	background-color:#FFF;
+	margin-left:30px;
+	margin-top:10px;
+/*	back50;ground-color:#960;
+*/	border:0px;
+	}
+
+	
+.mypost{
+	width:1306px;}
