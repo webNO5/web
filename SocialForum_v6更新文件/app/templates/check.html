@@ -1,0 +1,25 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    {% if title %}
+    <title>{{title}} - SocialForum</title>
+    {% else %}
+    <title>SocialForum</title>
+    {% endif %}
+  </head>
+  <body>
+  	{% for message in get_flashed_messages() %}
+		<span class=flash>{{ message }}</span>
+	{% endfor %}
+	 {% if state==0 %}
+    	<h1>验证码</h1>
+		<form action="" method="post">
+   	 		{{form.hidden_tag()}}
+   	 		<p>邮箱{{ form.email(size=20) }}</p>
+    		<p><input type="submit" value="确定"></p>
+		</form>
+	{% elif state!=0 %}
+	{% endif %}
+  </body>
+</html>
+
