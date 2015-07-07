@@ -1,0 +1,27 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="news">
+<div class="signup">
+
+<form method="post" action="">
+    {{ form.hidden_tag() }}
+   <div class="userpass"> <p>用户名&nbsp; &nbsp;&nbsp;{{ form.username(size=20) }}</p> </div>
+    <div class="userpass" style="margin-left:54px;"><p>邮箱&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{{ form.email(size=20) }}&nbsp;&nbsp;&nbsp;<a href="/check" target="_blank">获取验证码</a></p></div>
+	<div class="userpass"> <p>验证码&nbsp; &nbsp;&nbsp;{{ form.check(size=20) }}</p> </div>
+    <div class="userpass"> <p>密码&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{{ form.password(size=20) }}</p></div>
+    <div class="userpass"><p>确认密码&nbsp;{{ form.conform(size=20) }}</p></div>
+	
+	<div style="position:absolute;left:610px;">
+    <input type="submit" value="确认"  class="button" style="width:70px;height:20px;">
+    <input type="reset" value="重置"  class="button" style="width:70px;height:20px;">
+    {% for error in form.errors %}
+     <span style="color: red;">[{{error}}]</span>
+     {% endfor %}<br>
+	 </div>
+</form>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+	<style>
+		.check{
+			width:500px;
+			height:400px;
+			background:#ABCDEF;
+			text-align:center;
+			margin-left:350px;
+			margin-top:100px;
+			padding-top:60px;
+		}
+	</style>
+    {% if title %}
+    <title>{{title}} - SocialForum</title>
+    {% else %}
+    <title>SocialForum</title>
+    {% endif %}
+  </head>
+  <body>
+	<div class="check">
+  	{% for message in get_flashed_messages() %}
+		<span class=flash>{{ message }}</span>
+	{% endfor %}
+	 {% if state==0 %}
+    	<h1>验证码</h1>
+		<form action="" method="post">
+   	 		{{form.hidden_tag()}}
+   	 		<p>邮箱{{ form.email(size=20) }}</p>
+    		<p><input type="submit" value="确定"></p>
+		</form>
+	</div>
+	<div style="background:white;">
+		{% elif state!=0 %}
+		<script type="text/javascript">
+			setTimeout(function(){ //IE6、7不会提示关闭
+			window.opener=null;
+			window.open("","_self");
+			window.close();
+		},3000);
+		</script>
+		{% endif %}
+	</div>
+  </body>
+</html>
+
