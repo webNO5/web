@@ -1,0 +1,110 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {% if title %}
+    <title>{{title}} - SocialForum</title>
+    {% else %}
+    <title>SocialForum</title>
+    {% endif %}
+	<style>
+		body{
+			background:#A0A0A0;
+		}
+		#nav h3{
+			width:150px;
+			height:30px;
+			float:left;	
+			margin-left:0;
+			margin-right:0;
+			border:1px solid #888;;
+		}
+		.show{
+			width:912px;
+			background:#888;
+			text-align:center;
+			clear:both;
+			padding-top:30px;
+			padding-bottom:20px;
+		}
+		.mover{
+			background:#888;
+		}
+		.hidden{display:none;}
+	</style>
+  </head>
+  <body>
+    <header>
+		<h1 style="color:blue;margin-left:450px;font-size:36px;">Hello admin!</h1>
+		<div style="position:absolute;top:20px;right:20px;">
+		    <a href="/index">首页</a>
+		{% if current_user.is_authenticated() %}
+			<a href="{{ url_for('signout') }}">退出</a>
+		{% else %}
+			<a href="{{ url_for('login') }}">登录</a>
+		{% endif %}
+		</div>
+	</header>
+    <hr />
+    {% for message in get_flashed_messages() %}
+    <div class=flash>{{ message }}</div>
+    {% endfor %}
+	<section id="content">
+		<header id="nav" width="100%" height="30px" align="center">
+			<h3 onmouseover="trans(0)" class="mover">生活</h3>
+			<h3 onmouseover="trans(1)">教育</h3>
+			<h3 onmouseover="trans(2)">IT</h3>
+			<h3 onmouseover="trans(3)">文学</h3>
+			<h3 onmouseover="trans(4)">校园</h3>
+			<h3 onmouseover="trans(5)">学习</h3>
+			<br />
+		</header>
+		<div class="show">
+			{% for a in article.article1 %}
+				<p><a href={{a.url}} ">{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}<a href={{a.delurl}}>删除帖子</a></p>
+			{% endfor %}
+		</div>
+		<div class="hidden">	
+			{% for a in article.article2 %}
+				<p><a href={{a.url}}>{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}<a href={{a.delurl}}>删除帖子</a></p>
+			{% endfor %}
+		</div>	
+		<div class="hidden">	
+			{% for a in article.article3 %}
+				<p><a href={{a.url}}>{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}<a href={{a.delurl}}>删除帖子</a></p>
+			{% endfor %}
+		</div>	
+		<div class="hidden">	
+			{% for a in article.article4 %}
+				<p><a href={{a.url}}>{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}<a href={{a.delurl}}>删除帖子</a></p>
+			{% endfor %}
+		</div>	
+		<div class="hidden">	
+			{% for a in article.article5 %}
+				<p><a href={{a.url}}>{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}<a href={{a.delurl}}>删除帖子</a></p>
+			{% endfor %}
+		</div>	
+		<div class="hidden">	
+			{% for a in article.article6 %}
+				<p><a href={{a.url}}>{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}<a href={{a.delurl}}>删除帖子</a></p>
+			{% endfor %}
+		</div>
+	</section>
+  </body>
+</html>
+
+<script>
+	var h=document.getElementsByTagName("h3");
+	var div=document.getElementById("content").getElementsByTagName("div");
+	function trans(num){
+		for(var i=0;i<h.length;i++){
+			if(i==num){
+				h[i].className="mover";
+				div[i].className="show";
+			}else{
+				h[i].className="";
+				div[i].className="hidden";
+			}
+		}
+	}
+</script>

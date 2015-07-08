@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="bodybox">
+
+<div class="textbox">
+<div class="module">
+<h3><a href="/allarticles/1">>生活</a></h3>
+{% for a in article.article1 %}
+	<p><a href={{a.url}}>{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}</p>
+{% endfor %}
+</div>
+<div class="module">
+<h3><a href="/allarticles/2">>教育</a></h3>
+{% for a in article.article2 %}
+	<p><a href={{a.url}}>{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}</p>
+{% endfor %}
+</div>
+<div class="module">
+<h3><a href="/allarticles/3">>IT</a></h3>
+{% for a in article.article3 %}
+	<p><a href={{a.url}}>{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}</p>
+{% endfor %}
+</div>
+<div class="module">
+<h3><a href="/allarticles/4">>文学</a></h3>
+{% for a in article.article4 %}
+	<p><a href={{a.url}}>{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}</p>
+{% endfor %}
+</div>
+<div class="module">
+<h3><a href="/allarticles/5">>校园</a></h3>
+{% for a in article.article5 %}
+	<p><a href={{a.url}} >{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}</p>
+{% endfor %}
+</div>
+</div>
+
+<div class="special">
+<h3><a href="/allarticles/6">>学习</a></h3>
+{% for a in article.article6 %}
+	<p><a href={{a.url}} >{{a.art.title}}</a> 时间：{{a.art.timestamp}}  发帖人：{{a.user}}</p>
+{% endfor %}
+</div>
+
+<div class="newsbox">
+<h2><a href={{url_for('news')}} >新闻</a></h2>
+{% for n in news %}
+	<p><a href={{n.url}} target="_blank">{{n.title}}</a></p>
+{% endfor %}
+</div>
+</div>
+{% endblock %}
+
+
