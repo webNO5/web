@@ -1,0 +1,22 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="news">
+
+
+
+<div class="logbox">
+<form action="" method="post" name="login">
+    {{form.hidden_tag()}}
+    <div class="userpass">用户名&nbsp; &nbsp;&nbsp;<input type="text" name="username" size="80" class="logcontent" /><div>
+    <div class="userpass">密码&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<input type="password" name="password" size="80" class="logcontent" /></div>
+    
+    <div class="remenber">{{form.remember_me}} 记住我</div>
+    <input type="submit" value="登录" class="button">
+    <a href="{{ url_for('signup') }}">注册</a>
+</form>
+</div>
+</div>
+{% endblock %}
